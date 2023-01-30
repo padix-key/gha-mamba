@@ -1,7 +1,8 @@
 on:
   workflow_dispatch:
 
-mamba-issue:
+jobs:
+  mamba-issue:
     name: Reproduce Mamba issue
 
     runs-on: ubuntu-20.04
