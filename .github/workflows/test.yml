@@ -4,6 +4,7 @@ on:
 jobs:
   mamba-issue:
     name: Reproduce Mamba issue
+    continue-on-error: true
     
     strategy:
       matrix:
