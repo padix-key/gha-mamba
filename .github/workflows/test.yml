@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
 
-test-muscle5:
+mamba-issue:
     name: Reproduce Mamba issue
 
     runs-on: ubuntu-20.04
