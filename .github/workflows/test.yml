@@ -4,8 +4,13 @@ on:
 jobs:
   mamba-issue:
     name: Reproduce Mamba issue
+    
+    strategy:
+      matrix:
+        version: ["3.9", "3.10", "3.11"]
+        os: [ubuntu-20.04, ubuntu-22.04, windows-latest, macos-latest]
 
-    runs-on: ubuntu-20.04
+    runs-on: ${{ matrix.os }}
     defaults:
       run:
         shell: bash -l {0}
@@ -15,5 +20,5 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2
         with:
           mamba-version: "*"
-          python-version: 3.10
+          python-version: ${{ matrix.version }}
           channels: conda-forge,defaults
