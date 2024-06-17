@@ -8,8 +8,8 @@ jobs:
     
     strategy:
       matrix:
-        version: ["3.9", "3.10", "3.11"]
-        os: [ubuntu-20.04, ubuntu-22.04, windows-latest, macos-latest]
+        version: ["3.10", "3.11", "3.12"]
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     runs-on: ${{ matrix.os }}
     defaults:
@@ -17,8 +17,8 @@ jobs:
         shell: bash -l {0}
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: conda-incubator/setup-miniconda@v2
+      - uses: actions/checkout@v4
+      - uses: conda-incubator/setup-miniconda@v3
         with:
           mamba-version: "*"
           python-version: ${{ matrix.version }}
